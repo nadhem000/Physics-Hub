@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Interactive Periodic Table of Elements</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/dashboard.css">
+	</head>
+	<body>
+		<div class="PT-main-container">
+			<header class="PT-main-header">
+				<div class="PT-main-header-content">
+					<!-- Column 1: Logo -->
+					<div class="PT-main-header-col1">
+						<img src="assets/images/logos/logo1-640×640.jpg" alt="Physics Hub" class="PT-main-logo">
+					</div>
+					
+					<!-- Column 2: Site Title + Page Title -->
+					<div class="PT-main-header-center">
+						<div class="PT-main-site-title" data-i18n="site-title">Physics Hub</div>
+						<h1 class="PT-main-h1" data-i18n="periodic-table-title">Periodic Table of Elements</h1>
+						<p class="PT-main-subtitle" data-i18n="periodic-table-subtitle">Interactive visualization of all 118 chemical elements</p>
+					</div>
+					
+					<!-- Column 3: Calculators Link -->
+					<div class="PT-main-header-col3">
+						<a href="calculators.html" class="PT-main-calculator-link" data-i18n="calculators">Calculators</a>
+					</div>
+					
+					<!-- Column 4: Options Button -->
+					<div class="PT-main-header-col4">
+						<button class="PT-main-options-btn" id="optionsButton">⚙️</button>
+					</div>
+				</div>
+			</header>
+			
+			<!-- Options Modal for index.html -->
+			<div class="PT-main-modal" id="optionsModal">
+				<div class="PT-main-modal-content">
+					<button class="PT-main-modal-close" id="closeModal">&times;</button>
+					<h3 class="PT-main-modal-title">Options</h3>
+					<div class="PT-main-modal-language-options">
+						<button class="PT-main-modal-language-btn active" data-lang="en">English</button>
+						<button class="PT-main-modal-language-btn" data-lang="fr">Français</button>
+						<button class="PT-main-modal-language-btn" data-lang="ar">العربية</button>
+					</div>
+				</div>
+			</div>
+			
+			<div class="PT-dashboard-controls">
+				<button class="PT-dashboard-category-btn active" data-category="all" data-i18n="all-elements">All Elements</button>
+				<button class="PT-dashboard-category-btn" data-category="alkali" data-i18n="alkali-metals">Alkali Metals</button>
+				<button class="PT-dashboard-category-btn" data-category="alkaline" data-i18n="alkaline-earth-metals">Alkaline Earth Metals</button>
+				<button class="PT-dashboard-category-btn" data-category="transition" data-i18n="transition-metals">Transition Metals</button>
+				<button class="PT-dashboard-category-btn" data-category="post-transition" data-i18n="post-transition-metals">Post-Transition Metals</button>
+				<button class="PT-dashboard-category-btn" data-category="metalloids" data-i18n="metalloids">Metalloids</button>
+				<button class="PT-dashboard-category-btn" data-category="nonmetals" data-i18n="nonmetals">Nonmetals</button>
+				<button class="PT-dashboard-category-btn" data-category="halogens" data-i18n="halogens">Halogens</button>
+				<button class="PT-dashboard-category-btn" data-category="noble" data-i18n="noble-gases">Noble Gases</button>
+				<button class="PT-dashboard-category-btn" data-category="lanthanides" data-i18n="lanthanides">Lanthanides</button>
+				<button class="PT-dashboard-category-btn" data-category="actinides" data-i18n="actinides">Actinides</button>
+			</div>
+			
+			<div class="PT-dashboard-legend">
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #ff9999;"></div>
+					<span data-i18n="alkali-metals">Alkali Metals</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #ffde99;"></div>
+					<span data-i18n="alkaline-earth-metals">Alkaline Earth Metals</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #ffc0c0;"></div>
+					<span data-i18n="transition-metals">Transition Metals</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #cccccc;"></div>
+					<span data-i18n="post-transition-metals">Post-Transition Metals</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #ccff99;"></div>
+					<span data-i18n="metalloids">Metalloids</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #a0ffa0;"></div>
+					<span data-i18n="nonmetals">Nonmetals</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #ffff99;"></div>
+					<span data-i18n="halogens">Halogens</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #c0ffff;"></div>
+					<span data-i18n="noble-gases">Noble Gases</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #ffbfff;"></div>
+					<span data-i18n="lanthanides">Lanthanides</span>
+				</div>
+				<div class="PT-dashboard-legend-item">
+					<div class="PT-dashboard-legend-color" style="background-color: #ff99cc;"></div>
+					<span data-i18n="actinides">Actinides</span>
+				</div>
+			</div>
+			
+			<div class="PT-dashboard-periodic-table" id="periodicTable">
+				<!-- Elements will be generated by JavaScript -->
+			</div>
+			
+			<div class="PT-dashboard-element-details" id="elementDetails">
+				<!-- Element details will be populated by JavaScript -->
+			</div>
+			
+			<footer class="PT-main-footer">
+				<p data-i18n="footer-created">developed by Mejri Ziad</p>
+				<p data-i18n="footer-data">Data sourced from public domain resources</p>
+			</footer>
+		</div>
+		
+		<script src="scripts/translations.js"></script>
+		<script src="scripts/components.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/dashboard.js"></script>
+	</body>
+</html>

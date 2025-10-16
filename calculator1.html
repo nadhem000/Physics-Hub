@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Molar Mass Calculator</title>
+		<link rel="stylesheet" href="styles/main.css">
+		<link rel="stylesheet" href="styles/calculator1.css">
+	</head>
+	<body>
+		<div class="PT-main-container">
+			<!-- Header will be injected by components.js -->
+			
+			<div class="PT-calculator1-calculator-container">
+				<!-- Quick Calculator Section -->
+				<section class="PT-calculator1-quick-calculator">
+					<h2 data-i18n="quick-calculator">Quick Calculator</h2>
+					<div class="PT-calculator1-input-group">
+						<label for="chemicalFormula" data-i18n="enter-formula">Enter Chemical Formula:</label>
+						<input type="text" id="chemicalFormula" placeholder="e.g., H2O, Ca(OH)2, C6H12O6" data-i18n-placeholder="formula-placeholder">
+						<button id="calculateBtn" class="PT-calculator1-button" data-i18n="calculate">Calculate Molar Mass</button>
+					</div>
+					<div class="PT-calculator1-result" id="result">
+						<div class="PT-calculator1-result-content" id="resultContent">
+							<!-- Results will be displayed here -->
+						</div>
+					</div>
+				</section>
+				
+				<!-- Section 1: Definitions -->
+				<section class="PT-calculator1-content-section">
+					<h2 data-i18n="definitions-title">1. Definitions and Basic Concepts</h2>
+					<div class="PT-calculator1-definition-grid">
+						<div class="PT-calculator1-definition-card">
+							<h3 data-i18n="molar-mass-def">Molar Mass (M)</h3>
+							<p data-i18n="molar-mass-desc">The mass of one mole of a substance, expressed in grams per mole (g/mol). It is numerically equal to the atomic or molecular mass in atomic mass units (u).</p>
+							<div class="PT-calculator1-formula">M = m/n</div>
+						</div>
+						<div class="PT-calculator1-definition-card">
+							<h3 data-i18n="mass-def">Mass (m)</h3>
+							<p data-i18n="mass-desc">The actual mass of a sample, typically measured in grams (g).</p>
+						</div>
+						<div class="PT-calculator1-definition-card">
+							<h3 data-i18n="amount-def">Amount of Substance (n)</h3>
+							<p data-i18n="amount-desc">The number of moles of a substance, representing 6.022 × 10²³ particles (atoms, molecules, or formula units).</p>
+						</div>
+						<div class="PT-calculator1-definition-card">
+							<h3 data-i18n="avogadro-def">Avogadro's Number</h3>
+							<p data-i18n="avogadro-desc">6.022 × 10²³ particles per mole - the number of atoms in exactly 12 grams of carbon-12.</p>
+							<div class="PT-calculator1-formula">N<sub>A</sub> = 6.022 × 10²³ mol⁻¹</div>
+						</div>
+					</div>
+				</section>
+				
+				<!-- Section 2: Rules -->
+				<section class="PT-calculator1-content-section">
+					<h2 data-i18n="rules-title">2. Rules for Writing Chemical Formulas</h2>
+					<div class="PT-calculator1-rules-grid">
+						<div class="PT-calculator1-rule-item">
+							<h4 data-i18n="rule1-title">Element Symbols</h4>
+							<p data-i18n="rule1-desc">Use standard chemical symbols: H for hydrogen, O for oxygen, C for carbon, etc.</p>
+						</div>
+						<div class="PT-calculator1-rule-item">
+							<h4 data-i18n="rule2-title">Subscripts</h4>
+							<p data-i18n="rule2-desc">Numbers after element symbols indicate atom count: H₂O has 2 hydrogen and 1 oxygen atom.</p>
+						</div>
+						<div class="PT-calculator1-rule-item">
+							<h4 data-i18n="rule3-title">Parentheses</h4>
+							<p data-i18n="rule3-desc">Groups in parentheses are multiplied by the following subscript: Ca(OH)₂ has 1 Ca, 2 O, and 2 H atoms.</p>
+						</div>
+						<div class="PT-calculator1-rule-item">
+							<h4 data-i18n="rule4-title">Hydrates</h4>
+							<p data-i18n="rule4-desc">Use a dot for hydrates: CuSO₄·5H₂O indicates copper sulfate pentahydrate.</p>
+						</div>
+						<div class="PT-calculator1-rule-item">
+							<h4 data-i18n="rule5-title">Case Sensitivity</h4>
+							<p data-i18n="rule5-desc">Element symbols are case-sensitive: Co is cobalt, CO is carbon monoxide.</p>
+						</div>
+						<div class="PT-calculator1-rule-item">
+							<h4 data-i18n="rule6-title">Charges</h4>
+							<p data-i18n="rule6-desc">For ions, include charges: SO₄²⁻ for sulfate ion.</p>
+						</div>
+					</div>
+					<div class="PT-calculator1-examples-box">
+						<h4 data-i18n="formula-examples">Formula Examples:</h4>
+						<div class="PT-calculator1-examples-list">
+							<span>H₂O</span>
+							<span>NaCl</span>
+							<span>C₆H₁₂O₆</span>
+							<span>Ca(OH)₂</span>
+							<span>Al₂(SO₄)₃</span>
+							<span>CuSO₄·5H₂O</span>
+							<span>Fe₂O₃</span>
+							<span>CH₃COOH</span>
+						</div>
+					</div>
+				</section>
+				
+				<!-- Section 3: Calculation Methods -->
+				<section class="PT-calculator1-content-section">
+					<h2 data-i18n="calculations-title">3. Calculation Methods</h2>
+					
+					<!-- Subsection 1: M from m and n -->
+					<div class="PT-calculator1-calculation-method">
+						<h3 data-i18n="calc1-title">Calculating Molar Mass from Mass and Amount</h3>
+						<div class="PT-calculator1-formula-large">M = m ÷ n</div>
+						<p data-i18n="calc1-desc">Where M is molar mass (g/mol), m is mass (g), and n is amount of substance (mol).</p>
+						
+						<div class="PT-calculator1-interactive-calc">
+							<h4 data-i18n="interactive-calculator">Interactive Calculator</h4>
+							<div class="PT-calculator1-calc-inputs">
+								<div class="PT-calculator1-input-group">
+									<label for="massInput" data-i18n="mass-label">Mass (m):</label>
+									<input type="number" id="massInput" step="0.001" placeholder="Enter mass in grams">
+									<span>g</span>
+								</div>
+								<div class="PT-calculator1-input-group">
+									<label for="molesInput" data-i18n="moles-label">Amount (n):</label>
+									<input type="number" id="molesInput" step="0.001" placeholder="Enter moles">
+									<span>mol</span>
+								</div>
+								<button id="calcMolarMassBtn" class="PT-calculator1-button" data-i18n="calculate-molar-mass">Calculate Molar Mass</button>
+							</div>
+							<div class="PT-calculator1-calc-result" id="calcMolarMassResult"></div>
+						</div>
+						
+						<div class="PT-calculator1-example">
+							<h4 data-i18n="example">Example</h4>
+							<p data-i18n="calc1-example">If you have 18.0 g of water and it represents 1.0 mole, the molar mass is:</p>
+							<div class="PT-calculator1-calculation-step">
+								M = 18.0 g ÷ 1.0 mol = 18.0 g/mol
+							</div>
+						</div>
+					</div>
+					
+					<!-- Subsection 2: m from M and n -->
+					<div class="PT-calculator1-calculation-method">
+						<h3 data-i18n="calc2-title">Calculating Mass from Molar Mass and Amount</h3>
+						<div class="PT-calculator1-formula-large">m = M × n</div>
+						<p data-i18n="calc2-desc">Where m is mass (g), M is molar mass (g/mol), and n is amount of substance (mol).</p>
+						
+						<div class="PT-calculator1-interactive-calc">
+							<h4 data-i18n="interactive-calculator">Interactive Calculator</h4>
+							<div class="PT-calculator1-calc-inputs">
+								<div class="PT-calculator1-input-group">
+									<label for="molarMassInput" data-i18n="molar-mass-label">Molar Mass (M):</label>
+									<input type="number" id="molarMassInput" step="0.001" placeholder="Enter molar mass">
+									<span>g/mol</span>
+								</div>
+								<div class="PT-calculator1-input-group">
+									<label for="molesInput2" data-i18n="moles-label">Amount (n):</label>
+									<input type="number" id="molesInput2" step="0.001" placeholder="Enter moles">
+									<span>mol</span>
+								</div>
+								<button id="calcMassBtn" class="PT-calculator1-button" data-i18n="calculate-mass">Calculate Mass</button>
+							</div>
+							<div class="PT-calculator1-calc-result" id="calcMassResult"></div>
+						</div>
+						
+						<div class="PT-calculator1-example">
+							<h4 data-i18n="example">Example</h4>
+							<p data-i18n="calc2-example">If the molar mass of NaCl is 58.44 g/mol and you have 0.5 moles, the mass is:</p>
+							<div class="PT-calculator1-calculation-step">
+								m = 58.44 g/mol × 0.5 mol = 29.22 g
+							</div>
+						</div>
+					</div>
+					
+					<!-- Subsection 3: n from m and M -->
+					<div class="PT-calculator1-calculation-method">
+						<h3 data-i18n="calc3-title">Calculating Amount from Mass and Molar Mass</h3>
+						<div class="PT-calculator1-formula-large">n = m ÷ M</div>
+						<p data-i18n="calc3-desc">Where n is amount of substance (mol), m is mass (g), and M is molar mass (g/mol).</p>
+						
+						<div class="PT-calculator1-interactive-calc">
+							<h4 data-i18n="interactive-calculator">Interactive Calculator</h4>
+							<div class="PT-calculator1-calc-inputs">
+								<div class="PT-calculator1-input-group">
+									<label for="massInput2" data-i18n="mass-label">Mass (m):</label>
+									<input type="number" id="massInput2" step="0.001" placeholder="Enter mass in grams">
+									<span>g</span>
+								</div>
+								<div class="PT-calculator1-input-group">
+									<label for="molarMassInput2" data-i18n="molar-mass-label">Molar Mass (M):</label>
+									<input type="number" id="molarMassInput2" step="0.001" placeholder="Enter molar mass">
+									<span>g/mol</span>
+								</div>
+								<button id="calcMolesBtn" class="PT-calculator1-button" data-i18n="calculate-moles">Calculate Amount</button>
+							</div>
+							<div class="PT-calculator1-calc-result" id="calcMolesResult"></div>
+						</div>
+						
+						<div class="PT-calculator1-example">
+							<h4 data-i18n="example">Example</h4>
+							<p data-i18n="calc3-example">If you have 100 g of glucose (C₆H₁₂O₆) with molar mass 180.16 g/mol, the amount is:</p>
+							<div class="PT-calculator1-calculation-step">
+								n = 100 g ÷ 180.16 g/mol = 0.555 mol
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<!-- Section 4: Examples and Exercises -->
+				<section class="PT-calculator1-content-section">
+					<h2 data-i18n="exercises-title">4. Practice Exercises</h2>
+					
+					<div class="PT-calculator1-exercise">
+						<h4 data-i18n="exercise1">Exercise 1: Simple Compound</h4>
+						<p data-i18n="exercise1-desc">Calculate the molar mass of carbon dioxide (CO₂).</p>
+						<button class="PT-calculator1-solution-toggle PT-calculator1-button" data-i18n="show-solution">Show Solution</button>
+						<div class="PT-calculator1-solution">
+							<p data-i18n="exercise1-solution">Carbon: 12.01 g/mol × 1 = 12.01 g/mol<br>
+								Oxygen: 16.00 g/mol × 2 = 32.00 g/mol<br>
+							Total: 12.01 + 32.00 = 44.01 g/mol</p>
+						</div>
+					</div>
+					
+					<div class="PT-calculator1-exercise">
+						<h4 data-i18n="exercise2">Exercise 2: Compound with Parentheses</h4>
+						<p data-i18n="exercise2-desc">Calculate the molar mass of calcium nitrate, Ca(NO₃)₂.</p>
+						<button class="PT-calculator1-solution-toggle PT-calculator1-button" data-i18n="show-solution">Show Solution</button>
+						<div class="PT-calculator1-solution">
+							<p data-i18n="exercise2-solution">Calcium: 40.08 g/mol × 1 = 40.08 g/mol<br>
+								Nitrogen: 14.01 g/mol × 2 = 28.02 g/mol<br>
+								Oxygen: 16.00 g/mol × 6 = 96.00 g/mol<br>
+							Total: 40.08 + 28.02 + 96.00 = 164.10 g/mol</p>
+						</div>
+					</div>
+					
+					<div class="PT-calculator1-exercise">
+						<h4 data-i18n="exercise3">Exercise 3: Hydrate Compound</h4>
+						<p data-i18n="exercise3-desc">Calculate the molar mass of copper(II) sulfate pentahydrate, CuSO₄·5H₂O.</p>
+						<button class="PT-calculator1-solution-toggle PT-calculator1-button" data-i18n="show-solution">Show Solution</button>
+						<div class="PT-calculator1-solution">
+							<p data-i18n="exercise3-solution">Copper: 63.55 g/mol × 1 = 63.55 g/mol<br>
+								Sulfur: 32.06 g/mol × 1 = 32.06 g/mol<br>
+								Oxygen: 16.00 g/mol × 4 = 64.00 g/mol<br>
+								Water: 5 × (2×1.008 + 16.00) = 5 × 18.016 = 90.08 g/mol<br>
+							Total: 63.55 + 32.06 + 64.00 + 90.08 = 249.69 g/mol</p>
+						</div>
+					</div>
+					
+					<div class="PT-calculator1-exercise">
+						<h4 data-i18n="exercise4">Exercise 4: Mass Calculation</h4>
+						<p data-i18n="exercise4-desc">What is the mass of 2.5 moles of sodium chloride (NaCl)?</p>
+						<button class="PT-calculator1-solution-toggle PT-calculator1-button" data-i18n="show-solution">Show Solution</button>
+						<div class="PT-calculator1-solution">
+							<p data-i18n="exercise4-solution">Molar mass of NaCl = 22.99 + 35.45 = 58.44 g/mol<br>
+							Mass = 2.5 mol × 58.44 g/mol = 146.10 g</p>
+						</div>
+					</div>
+					
+					<div class="PT-calculator1-exercise">
+						<h4 data-i18n="exercise5">Exercise 5: Moles Calculation</h4>
+						<p data-i18n="exercise5-desc">How many moles are in 50.0 g of glucose (C₆H₁₂O₆)?</p>
+						<button class="PT-calculator1-solution-toggle PT-calculator1-button" data-i18n="show-solution">Show Solution</button>
+						<div class="PT-calculator1-solution">
+							<p data-i18n="exercise5-solution">Molar mass of C₆H₁₂O₆ = (6×12.01) + (12×1.008) + (6×16.00) = 180.16 g/mol<br>
+							Moles = 50.0 g ÷ 180.16 g/mol = 0.278 mol</p>
+						</div>
+					</div>
+				</section>
+			</div>
+			
+			<!-- Footer will be injected by components.js -->
+		</div>
+		
+		<script src="scripts/translations.js"></script>
+		<script src="scripts/components.js"></script>
+		<script src="scripts/main.js"></script>
+		<script src="scripts/calculator1.js"></script>
+	</body>
+</html>

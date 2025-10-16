@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.PT-main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.PT-main-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* New header structure */
+.PT-main-header-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.PT-main-logo {
+    height: 150px;
+    width: auto;
+    object-fit: contain;
+}
+
+.PT-main-site-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: white;
+    text-align: center;
+}
+
+.PT-main-header-center {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.PT-main-header-center .PT-main-h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.PT-main-header-center .PT-main-subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.PT-main-back-btn, .PT-main-calculator-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.PT-main-back-btn:hover, .PT-main-calculator-link:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.PT-main-options-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.PT-main-options-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Modal Styles */
+.PT-main-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.PT-main-modal.active {
+    display: flex;
+}
+
+.PT-main-modal-content {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.PT-main-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.PT-main-modal-title {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.PT-main-modal-language-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.PT-main-modal-language-btn {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.PT-main-modal-language-btn:hover {
+    border-color: #3498db;
+    background-color: #f8f9fa;
+}
+
+.PT-main-modal-language-btn.active {
+    border-color: #3498db;
+    background-color: #e8f4fc;
+    color: #3498db;
+    font-weight: bold;
+}
+
+.PT-main-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .PT-main-header-content {
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 15px;
+    }
+    
+    .PT-main-site-title {
+        font-size: 1.5rem;
+    }
+    
+    .PT-main-header-center .PT-main-h1 {
+        font-size: 1.5rem;
+    }
+    
+    .PT-main-logo {
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .PT-main-header-content {
+        grid-template-columns: 1fr 3fr;
+        gap: 10px;
+    }
+    
+    .PT-main-header-center .PT-main-h1 {
+        font-size: 1.3rem;
+    }
+    
+    .PT-main-site-title {
+        font-size: 1.3rem;
+    }
+    
+    .PT-main-header-center .PT-main-subtitle {
+        font-size: 0.9rem;
+    }
+}
