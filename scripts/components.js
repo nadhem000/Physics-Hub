@@ -19,11 +19,11 @@ const pageConfig = {
 
 // Function to inject header
 function injectHeader() {
+    // Get current page name - handle different URL formats
+    let currentPage = window.location.pathname.split('/').pop();
 	console.log('Current page:', window.location.pathname);
 	console.log('Extracted page:', currentPage);
 	console.log('Config found:', pageConfig[currentPage]);
-    // Get current page name - handle different URL formats
-    let currentPage = window.location.pathname.split('/').pop();
     
     // Remove .html extension and handle empty/invalid cases
     if (currentPage) {
@@ -99,11 +99,11 @@ function injectHeader() {
 
 // Function to inject footer
 function injectFooter() {
+    // Get current page name - handle different URL formats
+    let currentPage = window.location.pathname.split('/').pop();
 	console.log('Current page:', window.location.pathname);
 	console.log('Extracted page:', currentPage);
 	console.log('Config found:', pageConfig[currentPage]);
-    // Get current page name - handle different URL formats
-    let currentPage = window.location.pathname.split('/').pop();
     
     // Remove .html extension and handle empty/invalid cases
     if (currentPage) {
