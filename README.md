@@ -16,6 +16,9 @@ physics-hub/
 ├── index.html                 # Main periodic table page
 ├── calculators.html           # Calculators overview page
 ├── calculator1.html          # Molar mass calculator
+├── netlify.toml
+├── _redirects
+├── _headers
 ├── styles/
 │   ├── main.css              # Global styles
 │   ├── dashboard.css         # Periodic table styles
@@ -28,6 +31,9 @@ physics-hub/
 │   ├── dashboard.js          # Periodic table functionality
 │   ├── calculators.js        # Calculators page logic
 │   └── calculator1.js        # Molar mass calculator logic
+└── netlify/
+│   └── functions/
+│       └── hello.js
 └── assets/
     └── images/
         └── logos/
