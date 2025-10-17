@@ -1,6 +1,7 @@
 {
   "name": "Physics Hub - Periodic Table & Chemistry Calculators",
   "short_name": "Physics Hub",
+  "id": "PhysicsHub",
   "description": "Interactive Periodic Table and Chemistry Calculators with multi-language support",
   "start_url": "/",
   "display": "standalone",
@@ -41,14 +42,14 @@
       "src": "assets/images/screenshots/periodic-table-screenshot.png",
       "sizes": "1280x720",
       "type": "image/png",
-      "form_factor": "wide",
+      "platform": "wide",
       "label": "Interactive Periodic Table"
     },
     {
       "src": "assets/images/screenshots/calculator-screenshot.png",
       "sizes": "720x1280",
       "type": "image/png",
-      "form_factor": "narrow",
+      "platform": "narrow",
       "label": "Molar Mass Calculator"
     }
   ]
