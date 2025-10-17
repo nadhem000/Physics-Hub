@@ -225,3 +225,149 @@ body {
         font-size: 0.9rem;
     }
 }
+
+/* PWA Styles */
+.pwa-install-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2c3e50;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10000;
+  max-width: 400px;
+  width: 90%;
+  display: none;
+}
+
+.pwa-prompt-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.pwa-prompt-text {
+  flex: 1;
+}
+
+.pwa-prompt-text strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.pwa-prompt-text p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+.pwa-prompt-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.pwa-prompt-install,
+.pwa-prompt-dismiss {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.pwa-prompt-install {
+  background: #3498db;
+  color: white;
+}
+
+.pwa-prompt-dismiss {
+  background: transparent;
+  color: #bdc3c7;
+  border: 1px solid #bdc3c7;
+}
+
+.pwa-update-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #e74c3c;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 10000;
+}
+
+.pwa-update-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pwa-update-content button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+#pwa-update-btn {
+  background: white;
+  color: #e74c3c;
+}
+
+#pwa-update-dismiss {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.pwa-status-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  z-index: 10000;
+  animation: slideDown 0.3s ease;
+}
+
+.pwa-status-message.online {
+  background: #27ae60;
+}
+
+.pwa-status-message.offline {
+  background: #e74c3c;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateX(-50%) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Standalone mode adjustments */
+.pwa-standalone .PT-main-header {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* Print styles for PWA */
+@media print {
+  .pwa-install-prompt,
+  .pwa-update-notification,
+  .pwa-status-message {
+    display: none !important;
+  }
+}
